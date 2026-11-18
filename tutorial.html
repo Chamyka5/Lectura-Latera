@@ -12,8 +12,7 @@
 
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-  
-<header class="site-header" id="inicio">
+  <header class="site-header" id="inicio">
     <div class="container header-row">
       <a class="brand" href="index.html" aria-label="Aula Lateral, inicio">
         <span class="brand-mark" aria-hidden="true"><i></i></span>
@@ -118,7 +117,7 @@
       </div>
     </section>
 
-<!-- SECCIÓN 03: PRÁCTICA -->
+    <!-- SECCIÓN 03: PRÁCTICA -->
     <section class="section practice-section" id="practica">
       <div class="container">
         <div class="practice-header-centered">
@@ -134,7 +133,6 @@
           </div>
 
           <form class="activity-form" id="practice-form">
-            
             <!-- Pregunta 1 -->
             <div class="form-step-group">
               <label class="question-title">1. ¿Cuál debe ser tu primer movimiento al leer un titular tan extraordinario?</label>
@@ -227,59 +225,57 @@
         <span>aula<strong>lateral</strong></span>
       </a>
       <p>Una guía para aprender a leer con contexto universitario.</p>
-      <a href="#">Volver arriba ↑</a>
+      <a href="#inicio">Volver arriba ↑</a>
     </div>
   </footer>
 
-</body>
+  <script>
+    document.getElementById('practice-form').addEventListener('submit', function(e) {
+      e.preventDefault();
 
-<script>
-  document.getElementById('practice-form').addEventListener('submit', function(e) {
-    e.preventDefault();
+      const correctas = {
+        "p1": "b",
+        "p2": "a",
+        "p3": "a",
+        "p4": "a",
+        "p5": "a"
+      };
 
-    // Respuestas correctas
-    const correctas = {
-      "p1": "b",
-      "p2": "a",
-      "p3": "a",
-      "p4": "a",
-      "p5": "a"
-    };
+      let puntaje = 0;
+      let total = Object.keys(correctas).length;
 
-    let puntaje = 0;
-    let total = Object.keys(correctas).length;
-
-    for (let pregunta in correctas) {
-      const selected = document.querySelector(`input[name="${pregunta}"]:checked`);
-      if (selected && selected.value === correctas[pregunta]) {
-        puntaje++;
+      for (let pregunta in correctas) {
+        const selected = document.querySelector(`input[name="${pregunta}"]:checked`);
+        if (selected && selected.value === correctas[pregunta]) {
+          puntaje++;
+        }
       }
-    }
 
-    this.style.display = 'none';
-    const container = document.getElementById('result-container');
-    
-    const mensaje = puntaje >= 4
-      ? "¡Excelente trabajo! Has demostrado dominar los principios fundamentales de la lectura lateral y el contraste de fuentes."
-      : "Buen intento. Te sugerimos revisar las secciones anteriores del tutorial para afianzar tus criterios de búsqueda externa.";
+      this.style.display = 'none';
+      const container = document.getElementById('result-container');
+      
+      const mensaje = puntaje >= 4
+        ? "¡Excelente trabajo! Has demostrado dominar los principios fundamentales de la lectura lateral y el contraste de fuentes."
+        : "Buen intento. Te sugerimos revisar las secciones anteriores del tutorial para afianzar tus criterios de búsqueda externa.";
 
-    container.innerHTML = `
-      <p style="color: var(--accent-green); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; margin-bottom: 10px;">EVALUACIÓN COMPLETADA</p>
-      <h3 style="color: #fff; font-size: 28px; margin-bottom: 15px; letter-spacing: -.03em;">Tu puntaje: ${puntaje} de ${total}</h3>
-      <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 30px;">${mensaje}</p>
-      <button type="button" class="button-blue" id="reset-quiz" style="width: 100%; cursor: pointer;">Intentar de nuevo</button>
-    `;
-    container.style.display = 'block';
-  });
+      container.innerHTML = `
+        <p style="color: var(--accent-green); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; margin-bottom: 10px;">EVALUACIÓN COMPLETADA</p>
+        <h3 style="color: #fff; font-size: 28px; margin-bottom: 15px; letter-spacing: -.03em;">Tu puntaje: ${puntaje} de ${total}</h3>
+        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 30px;">${mensaje}</p>
+        <button type="button" class="button-blue" id="reset-quiz" style="width: 100%; cursor: pointer;">Intentar de nuevo</button>
+      `;
+      container.style.display = 'block';
+    });
 
-  document.addEventListener('click', function(e) {
-    if (e && e.target && e.target.id === 'reset-quiz') {
-      const form = document.getElementById('practice-form');
-      form.reset();
-      form.style.display = 'block';
-      document.getElementById('result-container').style.display = 'none';
-    }
-  });
-</script>
+    document.addEventListener('click', function(e) {
+      if (e && e.target && e.target.id === 'reset-quiz') {
+        const form = document.getElementById('practice-form');
+        form.reset();
+        form.style.display = 'block';
+        document.getElementById('result-container').style.display = 'none';
+      }
+    });
+  </script>
 
+</body>
 </html>
