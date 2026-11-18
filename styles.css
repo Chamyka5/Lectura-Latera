@@ -341,7 +341,7 @@ h1 {
   background: #2b6cb0; 
 }
 
-/* Secciones generales */
+/* Secciones generales del tutorial */
 .section { 
   padding-block: 80px; 
   border-bottom: 1px solid var(--line); 
