@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#18202c">
+  <meta name="description" content="Tutorial interactivo de lectura lateral y evaluación de fuentes.">
+  <title>Tutorial | Aula Lateral</title>
+  <link rel="stylesheet" href="tutostyle.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  
+<header class="site-header" id="inicio">
+    <div class="container header-row">
+      <a class="brand" href="index.html" aria-label="Aula Lateral, inicio">
+        <span class="brand-mark" aria-hidden="true"><i></i></span>
+        <span>aula<strong>lateral</strong></span>
+      </a>
+
+      <input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Abrir o cerrar menú">
+      <label class="menu-button" for="nav-toggle">
+        <span class="menu-lines" aria-hidden="true">☰</span>
+        <span class="menu-word">Menú</span>
+      </label>
+
+      <!-- Menú principal (en móviles incluye el enlace para volver al inicio) -->
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html" class="mobile-only-link">← Volver al inicio</a>
+        <a href="index.html">Inicio</a>
+        <a href="#idea">La idea</a>
+        <a href="#metodo">El método</a>
+        <a href="#practica">Práctica</a>
+      </nav>
+
+      <!-- Este botón grande de la derecha se ocultará en pantallas chicas -->
+      <a class="nav-cta desktop-only-cta" href="index.html">&larr; Volver inicio</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- SECCIÓN 01: LA IDEA CLAVE -->
+    <section class="section idea-section" id="idea">
+      <div class="container">
+        <div class="manifesto-box">
+          <p class="section-label"><span>01</span> / LA IDEA CLAVE</p>
+          <h2 class="manifesto-title">Una buena lectura<br>también sabe <em>salir.</em></h2>
+          <p class="manifesto-lead">
+            La lectura lateral no es desconfiar por desconfiar; es entender que ninguna página web se explica completamente a sí misma. 
+            Cuando sales a buscar contexto independiente, dejas de evaluar apariencias y empiezas a evaluar realidades.
+          </p>
+        </div>
+
+        <div class="contrast-split">
+          <div class="contrast-col vertical">
+            <span class="bad-tag">Lectura Vertical</span>
+            <h3>Atrapado en el sitio</h3>
+            <p>Juzgas la confiabilidad analizando el diseño, el tono institucional y lo que la propia página dice de su trayectoria.</p>
+          </div>
+          <div class="contrast-col lateral">
+            <span class="good-tag">Lectura Lateral</span>
+            <h3>Abriendo horizontes</h3>
+            <p>Sales a pestañas nuevas. Investigas quién financia, qué dicen los expertos independientes y de dónde sale la evidencia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 02: EL MÉTODO (CON ICONOS MINIMALISTAS) -->
+    <section class="section method-section" id="metodo">
+      <div class="container">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-label"><span>02</span> / EL MÉTODO</p>
+            <h2>Cuatro movimientos<br><em>hacia el contexto.</em></h2>
+          </div>
+          <p class="section-sub">Un recorrido ágil para pasar de la duda superficial a una conclusión informada.</p>
+        </div>
+
+        <div class="editorial-timeline">
+          <div class="timeline-step">
+            <div class="step-icon-minimal">↗</div>
+            <div class="t-content">
+              <span class="t-num">01</span>
+              <h3>Sal de la página</h3>
+              <p>Haz una pausa ante cualquier afirmación contundente. Abre un buscador y empieza el rastreo afuera.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-icon-minimal">⌕</div>
+            <div class="t-content">
+              <span class="t-num">02</span>
+              <h3>Investiga quién está detrás</h3>
+              <p>Descubre quién firma, qué intereses persigue la organización y cuál es su reputación real frente a sus pares.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-icon-minimal">◎</div>
+            <div class="t-content">
+              <span class="t-num">03</span>
+              <h3>Contrasta la afirmación</h3>
+              <p>Sigue los hilos hasta la fuente primaria: el estudio científico, el documento oficial o el informe de datos original.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-icon-minimal">✓</div>
+            <div class="t-content">
+              <span class="t-num">04</span>
+              <h3>Vuelve y reevalúa</h3>
+              <p>Regresa al punto de partida con criterio propio. Ya no opinas sobre la fachada, sino sobre los cimientos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 03: PRÁCTICA -->
+    <section class="section practice-section" id="practica">
+      <div class="container">
+        <div class="practice-header-centered">
+          <p class="section-label"><span>03</span> / CASO PRÁCTICO</p>
+          <h2>Pon a prueba tu <em>criterio.</em></h2>
+        </div>
+
+        <div class="case-study-card">
+          <div class="case-banner">
+            <span class="badge-red">ALERTA DE TITULAR VIRAL</span>
+            <p class="case-quote">«Una nueva técnica de estudio mejora las calificaciones de todo el alumnado en solo dos semanas»</p>
+          </div>
+
+          <form class="activity-form" action="/cgi-bin/aula.cgi" method="post">
+            <input type="hidden" name="action" value="practice">
+
+            <div class="form-step-group">
+              <label class="question-title">1. ¿Cuál es tu primer movimiento al leer esto?</label>
+              <div class="options-row">
+                <label class="choice-pill">
+                  <input type="radio" name="first_move" value="0" required>
+                  <span>Examinar a fondo los detalles dentro de la misma página.</span>
+                </label>
+                <label class="choice-pill">
+                  <input type="radio" name="first_move" value="1">
+                  <span>Abrir pestañas alternas para buscar qué dicen fuentes externas.</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-step-group">
+              <label class="question-title">2. Selecciona las pistas clave que buscarías afuera:</label>
+              <div class="options-row">
+                <label class="choice-pill">
+                  <input type="checkbox" name="source" value="publisher">
+                  <span>Antecedentes y posibles sesgos del emisor.</span>
+                </label>
+                <label class="choice-pill">
+                  <input type="checkbox" name="source" value="study">
+                  <span>Validez y límites reales del estudio mencionado.</span>
+                </label>
+              </div>
+            </div>
+
+            <button class="button-blue" type="submit">Procesar mi análisis <span aria-hidden="true">→</span></button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <a class="brand footer-brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"><i></i></span>
+        <span>aula<strong>lateral</strong></span>
+      </a>
+      <p>Una guía para aprender a leer con contexto universitario.</p>
+      <a href="#">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+</body>
+</html>
