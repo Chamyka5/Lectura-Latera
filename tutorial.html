@@ -120,53 +120,104 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 03: PRÁCTICA -->
+<!-- SECCIÓN 03: PRÁCTICA AMPLIADA -->
     <section class="section practice-section" id="practica">
       <div class="container">
         <div class="practice-header-centered">
           <p class="section-label"><span>03</span> / CASO PRÁCTICO</p>
           <h2>Pon a prueba tu <em>criterio.</em></h2>
+          <p class="section-sub" style="margin-top: 10px; max-width: 600px; margin-inline: auto;">Responde este caso de 5 preguntas clave para evaluar tu destreza en lectura lateral y verificación de fuentes.</p>
         </div>
 
         <div class="case-study-card">
           <div class="case-banner">
             <span class="badge-red">ALERTA DE TITULAR VIRAL</span>
-            <p class="case-quote">«Una nueva técnica de estudio mejora las calificaciones de todo el alumnado en solo dos semanas»</p>
+            <p class="case-quote">«Una nueva técnica de estudio milagrosa mejora las calificaciones de todo el alumnado en solo dos semanas sin esfuerzo»</p>
           </div>
 
-          <form class="activity-form" action="/cgi-bin/aula.cgi" method="post">
-            <input type="hidden" name="action" value="practice">
-
+          <!-- Formulario manejado por JavaScript -->
+          <form class="activity-form" id="practice-form">
+            
+            <!-- Pregunta 1 -->
             <div class="form-step-group">
-              <label class="question-title">1. ¿Cuál es tu primer movimiento al leer esto?</label>
+              <label class="question-title">1. ¿Cuál debe ser tu primer movimiento al leer un titular tan extraordinario?</label>
               <div class="options-row">
                 <label class="choice-pill">
-                  <input type="radio" name="first_move" value="0" required>
-                  <span>Examinar a fondo los detalles dentro de la misma página.</span>
+                  <input type="radio" name="p1" value="a" required>
+                  <span>Creer en la página si el diseño se ve profesional y moderno.</span>
                 </label>
                 <label class="choice-pill">
-                  <input type="radio" name="first_move" value="1">
-                  <span>Abrir pestañas alternas para buscar qué dicen fuentes externas.</span>
+                  <input type="radio" name="p1" value="b">
+                  <span>Hacer una pausa y salir del sitio para buscar contexto en fuentes externas.</span>
                 </label>
               </div>
             </div>
 
+            <!-- Pregunta 2 -->
             <div class="form-step-group">
-              <label class="question-title">2. Selecciona las pistas clave que buscarías afuera:</label>
+              <label class="question-title">2. Al abrir pestañas para investigar la fuente, ¿qué información buscas primero?</label>
               <div class="options-row">
                 <label class="choice-pill">
-                  <input type="checkbox" name="source" value="publisher">
-                  <span>Antecedentes y posibles sesgos del emisor.</span>
+                  <input type="radio" name="p2" value="a" required>
+                  <span>Quién está detrás de la web, sus antecedentes y posibles conflictos de interés.</span>
                 </label>
                 <label class="choice-pill">
-                  <input type="checkbox" name="source" value="study">
-                  <span>Validez y límites reales del estudio mencionado.</span>
+                  <input type="radio" name="p2" value="b">
+                  <span>Cuántos seguidores y compartidos tiene la publicación en redes sociales.</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Pregunta 3 -->
+            <div class="form-step-group">
+              <label class="question-title">3. El artículo menciona un "estudio científico". ¿Cómo verificas su validez real?</label>
+              <div class="options-row">
+                <label class="choice-pill">
+                  <input type="radio" name="p3" value="a" required>
+                  <span>Buscar la investigación original o la opinión de expertos independientes en el tema.</span>
+                </label>
+                <label class="choice-pill">
+                  <input type="radio" name="p3" value="b">
+                  <span>Confiar ciegamente porque incluye la palabra "científico" en el texto.</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Pregunta 4 -->
+            <div class="form-step-group">
+              <label class="question-title">4. ¿Qué indicador te alerta de que un sitio web carece de rigor informativo?</label>
+              <div class="options-row">
+                <label class="choice-pill">
+                  <input type="radio" name="p4" value="a" required>
+                  <span>Uso excesivo de emociones, urgencia comercial y ausencia de enlaces a fuentes.</span>
+                </label>
+                <label class="choice-pill">
+                  <input type="radio" name="p4" value="b">
+                  <span>Tener un fondo de pantalla oscuro y menús minimalistas en la interfaz.</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Pregunta 5 -->
+            <div class="form-step-group">
+              <label class="question-title">5. Tras completar tu lectura lateral, ¿cuál es la conclusión correcta?</label>
+              <div class="options-row">
+                <label class="choice-pill">
+                  <input type="radio" name="p5" value="a" required>
+                  <span>La fachada publicitaria no importa; lo que define la veracidad son los cimientos y datos contrastados.</span>
+                </label>
+                <label class="choice-pill">
+                  <input type="radio" name="p5" value="b">
+                  <span>Si la noticia es muy popular en internet, seguramente tiene algo de verdad.</span>
                 </label>
               </div>
             </div>
 
             <button class="button-blue" type="submit">Procesar mi análisis <span aria-hidden="true">→</span></button>
           </form>
+
+          <!-- Contenedor dinámico de resultados (oculto por defecto) -->
+          <div id="result-container" style="display: none; padding: 40px; text-align: center;"></div>
         </div>
       </div>
     </section>
@@ -185,4 +236,57 @@
   </footer>
 
 </body>
+
+<script>
+  document.getElementById('practice-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Evita que la página intente recargarse o enviar datos a un servidor externo
+
+    // Respuestas correctas asignadas a cada pregunta
+    const correctas = {
+      "p1": "b",
+      "p2": "a",
+      "p3": "a",
+      "p4": "a",
+      "p5": "a"
+    };
+
+    let puntaje = 0;
+    let total = Object.keys(correctas).length;
+
+    // Evaluamos cada respuesta seleccionada por el usuario
+    for (let pregunta in correctas) {
+      const selected = document.querySelector(`input[name="${pregunta}"]:checked`);
+      if (selected && selected.value === correctas[pregunta]) {
+        puntaje++;
+      }
+    }
+
+    // Ocultamos el formulario y mostramos el resultado con el estilo de la tarjeta
+    this.style.display = 'none';
+    const container = document.getElementById('result-container');
+    
+    const mensaje = puntaje >= 4
+      ? "¡Excelente trabajo! Has demostrado dominar los principios fundamentales de la lectura lateral y el contraste de fuentes."
+      : "Buen intento. Te sugerimos revisar las secciones anteriores del tutorial para afianzar tus criterios de búsqueda externa.";
+
+    container.innerHTML = `
+      <p style="color: var(--accent-green); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; margin-bottom: 10px;">EVALUACIÓN COMPLETADA</p>
+      <h3 style="color: #fff; font-size: 28px; margin-bottom: 15px; letter-spacing: -.03em;">Tu puntaje: ${puntaje} de ${total}</h3>
+      <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 30px;">${mensaje}</p>
+      <button type="button" class="button-blue" id="reset-quiz" style="width: 100%; cursor: pointer;">Intentar de nuevo</button>
+    `;
+    container.style.display = 'block';
+  });
+
+  // Evento para reiniciar el cuestionario si el usuario desea repetirlo
+  document.addEventListener('click', function(e) {
+    if (e && e.target && e.target.id === 'reset-quiz') {
+      const form = document.getElementById('practice-form');
+      form.reset();
+      form.style.display = 'block';
+      document.getElementById('result-container').style.display = 'none';
+    }
+  });
+</script>
+
 </html>
