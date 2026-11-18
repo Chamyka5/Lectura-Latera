@@ -26,7 +26,6 @@
         <span class="menu-word">Menú</span>
       </label>
 
-      <!-- Menú principal (en móviles incluye el enlace para volver al inicio) -->
       <nav class="main-nav" aria-label="Navegación principal">
         <a href="index.html" class="mobile-only-link">← Volver al inicio</a>
         <a href="index.html">Inicio</a>
@@ -35,7 +34,6 @@
         <a href="#practica">Práctica</a>
       </nav>
 
-      <!-- Este botón grande de la derecha se ocultará en pantallas chicas -->
       <a class="nav-cta desktop-only-cta" href="index.html">&larr; Volver inicio</a>
     </div>
   </header>
@@ -69,7 +67,7 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 02: EL MÉTODO (CON ICONOS MINIMALISTAS) -->
+    <!-- SECCIÓN 02: EL MÉTODO -->
     <section class="section method-section" id="metodo">
       <div class="container">
         <div class="section-heading-row">
@@ -120,7 +118,7 @@
       </div>
     </section>
 
-<!-- SECCIÓN 03: PRÁCTICA AMPLIADA -->
+<!-- SECCIÓN 03: PRÁCTICA -->
     <section class="section practice-section" id="practica">
       <div class="container">
         <div class="practice-header-centered">
@@ -135,7 +133,6 @@
             <p class="case-quote">«Una nueva técnica de estudio milagrosa mejora las calificaciones de todo el alumnado en solo dos semanas sin esfuerzo»</p>
           </div>
 
-          <!-- Formulario manejado por JavaScript -->
           <form class="activity-form" id="practice-form">
             
             <!-- Pregunta 1 -->
@@ -216,7 +213,6 @@
             <button class="button-blue" type="submit">Procesar mi análisis <span aria-hidden="true">→</span></button>
           </form>
 
-          <!-- Contenedor dinámico de resultados (oculto por defecto) -->
           <div id="result-container" style="display: none; padding: 40px; text-align: center;"></div>
         </div>
       </div>
@@ -239,9 +235,9 @@
 
 <script>
   document.getElementById('practice-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Evita que la página intente recargarse o enviar datos a un servidor externo
+    e.preventDefault();
 
-    // Respuestas correctas asignadas a cada pregunta
+    // Respuestas correctas
     const correctas = {
       "p1": "b",
       "p2": "a",
@@ -253,7 +249,6 @@
     let puntaje = 0;
     let total = Object.keys(correctas).length;
 
-    // Evaluamos cada respuesta seleccionada por el usuario
     for (let pregunta in correctas) {
       const selected = document.querySelector(`input[name="${pregunta}"]:checked`);
       if (selected && selected.value === correctas[pregunta]) {
@@ -261,7 +256,6 @@
       }
     }
 
-    // Ocultamos el formulario y mostramos el resultado con el estilo de la tarjeta
     this.style.display = 'none';
     const container = document.getElementById('result-container');
     
@@ -278,7 +272,6 @@
     container.style.display = 'block';
   });
 
-  // Evento para reiniciar el cuestionario si el usuario desea repetirlo
   document.addEventListener('click', function(e) {
     if (e && e.target && e.target.id === 'reset-quiz') {
       const form = document.getElementById('practice-form');
